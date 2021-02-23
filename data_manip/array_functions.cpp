@@ -11,9 +11,8 @@
 
 namespace KP{
 	//remove all elements from vector that tracks words and their occurrences
-	void clear(std::vector<constants::entry>  &entries){
+	void clear(std::vector<constants::entry>  &entries) {
 		entries.clear();
-
 	}
 
 	//return how many unique words are in the vector
@@ -39,10 +38,10 @@ namespace KP{
 	 *         true: otherwise*/
 	bool processFile(std::vector<constants::entry>  &entries,std::fstream &myfstream) {
 			std::string str;
-			if (!myfstream.is_open()){
+			if (!myfstream.is_open()) {
 				return false;
 			}
-			while (getline(myfstream, str)){
+			while (getline(myfstream, str)) {
 				processLine(entries, str);
 			}
 			return true;
@@ -92,9 +91,9 @@ namespace KP{
 		else {
 			entries[index].number_occurences += 1;
 		}
-
 	}
-	//sorting
+
+	//setting up the boolean sorting
 	bool compareAsc(constants::entry &a, constants::entry &b) {
 		return a.word_uppercase < b.word_uppercase;
 	}
@@ -105,7 +104,7 @@ namespace KP{
 		return a.number_occurences > b.number_occurences;
 	}
 
-
+	// actually sorting entries
 	void sort(std::vector<constants::entry>  &entries, constants::sortOrder so) {
 		if (so==constants::NONE) {
 			return;
