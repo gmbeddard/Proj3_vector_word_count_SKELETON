@@ -2,37 +2,36 @@
 #include <fstream>
 #include <sstream>
 #include <string>
-
+#include <algorithm>
 #include <vector>
 #include "../includes/constants.h"
 #include "../includes/array_functions.h"
-using namespace std;
+#include "../includes/utilities.h"
+
 
 
 namespace KP{
 	//remove all elements from vector that tracks words and their occurrences
 	void clear(std::vector<constants::entry>  &entries){
-		//TODO
+		entries.clear();
 
-	//return how many unique words are in the vector
 	}
 
+	//return how many unique words are in the vector
 	int getSize(std::vector<constants::entry>  &entries) {
-		//TODO
+		return entries.size();
+	}
 
 	//get word at location i iff i<size(see above function), otherwise return the last word
 	//(this is lazy, should throw an exception instead)
-	}
-
 	std::string getWordAt(std::vector<constants::entry>  &entries, int i) {
-		//TODO
+		return entries[i].word;
+	}
 
 	//get number_occurences at location i iff i<size(see above function), otherwise return the last number_occurences
 	//(this is lazy, should throw an exception instead)
-	}
-
 	int getNumbOccurAt(std::vector<constants::entry>  &entries,int i) {
-		//TODO
+		return entries[i].number_occurences;
 
 	/*loop through the entire file, one line at a time
 	 * call processLine on each line from the file
@@ -41,7 +40,7 @@ namespace KP{
 	}
 
 	bool processFile(std::vector<constants::entry>  &entries,std::fstream &myfstream) {
-		//TODO
+		return false;
 
 	/*take 1 line and extract all the tokens from it
 	feed each token to processToken for recording*/
