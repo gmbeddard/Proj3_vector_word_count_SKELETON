@@ -1,6 +1,6 @@
 //============================================================================
 // Name        : Proj3_vector_word_count.cpp
-// Author      : 
+// Author      : Gabby Beddard
 // Version     :
 // Copyright   : Your copyright notice
 // Description : Hello World in C++, Ansi-style
