@@ -9,7 +9,6 @@
 #include "../includes/utilities.h"
 
 
-
 namespace KP{
 	//remove all elements from vector that tracks words and their occurrences
 	void clear(std::vector<constants::entry>  &entries){
