@@ -4,18 +4,20 @@
 #include <sstream>
 #include <string>
 #include "../includes/constants.h"
-#include "../includes/fileio.h"
-using namespace std;
-
+#include "../includes/utilities.h"
 
 bool openFile(std::fstream& myfile, const std::string& myFileName,
 		std::ios_base::openmode mode = std::ios_base::in) {
-	//TODO
+	myfile.open(myFileName, mode);
+	return myfile.is_open();
+
 }
 
 /*if myfile is open then close it*/
 void closeFile(std::fstream& myfile){
-	//TODO
+	if (myfile.is_open())
+		myfile.close();
+}
 
 /* serializes all content in entries to file outputfilename
  * check out utils for helpful type conversion functions
@@ -25,9 +27,22 @@ void closeFile(std::fstream& myfile){
  * 			FAIL_NO_ARRAY_DATA if there are 0 entries in the vector entries
  * 			SUCCESS if all data is written and outputfilename closes OK
  * */
-}
 
 int writetoFile(std::vector<constants::entry>  &entries, const std::string &outputfilename){
-	//TODO
+	std::ofstream outfile;
+	outfile.open(outputfilename);
+
+	//if cannot open outputfilename
+	if (!outfile.is_open())
+		return constants::FAIL_FILE_DID_NOT_OPEN;
+
+	//if there are 0 entries in the vector entries
+	if (entries.size()==0)
+		return constants::FAIL_NO_ARRAY_DATA;
+
+	//serialize all content in entries to file outputfilename
+
+	//if all data is written and outputfilename closes okay
+	return constants::SUCCESS;
 }
 
